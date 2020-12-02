@@ -25,16 +25,22 @@ export class Visual {
             stage.removeChild(this.container);
         }
 
-        this.pos = this.text.setText('A', 2, stageWidth, stageHeight);
+        this.pos = this
+            .text
+            .setText('B', 2, stageWidth, stageHeight);
 
-        this.container = new PIXI.ParticleContainer(this.pos.length, {
-            vertices: false,
-            position: true,
-            rotation: false,
-            scale: false,
-            uvs: false,
-            tint: false
-        });
+        this.container = new PIXI.ParticleContainer(
+            this.pos.length, 
+            {
+                vertices: false,
+                position: true,
+                rotation: false,
+                scale: false,
+                uvs: false,
+                tint: false
+           }
+        );
+
         stage.addChild(this.container);
 
         this.particles = [];
